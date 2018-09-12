@@ -1,0 +1,2 @@
+- name: install heroku cli via snap
+  command: snap install heroku --classic
