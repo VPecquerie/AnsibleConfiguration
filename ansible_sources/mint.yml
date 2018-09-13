@@ -4,6 +4,7 @@
    - include: java.yml
    - include: apt.yml
    - include: debs.yml
+   - include: user.yml
    - include: targz-apps.yml
    - include: binaries.yml
    - include: pip.yml

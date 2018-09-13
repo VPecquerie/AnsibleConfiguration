@@ -2,6 +2,3 @@
 - include_vars: vars.yml
 - name: Install custom fonts
   script: scripts/install_fonts.sh
-- name: Set zsh as default sh
-  become: yes
-  shell: "chsh -s $(which zsh) {{ username }}"
