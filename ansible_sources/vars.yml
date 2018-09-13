@@ -7,10 +7,10 @@ repositories:
  chrome:
   repository: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
   key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-# spotify:
-#  repository: deb http://repository.spotify.com stable non-free
-#  keyserver: hkp://keyserver.ubuntu.com:80
-#  key: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+ spotify:
+  repository: deb http://repository.spotify.com stable non-free
+  keyserver: hkp://keyserver.ubuntu.com:80
+  key: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 packages:
  - vim
  - zsh
@@ -21,7 +21,7 @@ packages:
  - httpie
  - jq
  - google-chrome-stable
-# - spotify-client
+ - spotify-client
  - snapd
 debs: {}
 pip: {}
