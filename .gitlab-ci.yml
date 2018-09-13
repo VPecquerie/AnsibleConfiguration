@@ -1,0 +1,26 @@
+image: docker:latest
+variables:
+  DOCKER_USERNAME: "registry"
+  DOCKER_REPOSITORY: "registry.we-program-it.com/vpecquerie/ansible-configuration"
+
+services:
+  - docker:dind
+
+before_script:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
+build-master:
+  stage: build
+  script:
+    - docker build --pull -t "$DOCKER_REPOSITORY" .
+    - docker push "$DOCKER_REPOSITORY"
+  only:
+    - master
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t "$DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG" .
+    - docker push "$DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG"
+  except:
+    - master
