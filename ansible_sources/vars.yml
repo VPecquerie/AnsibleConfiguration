@@ -42,3 +42,15 @@ binaries:
     name: docker-machine
     url: https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-Linux-x86_64
     zsh_completion: https://raw.githubusercontent.com/docker/machine/v0.15.0/contrib/completion/zsh/_docker-machine
+dotfiles:
+  - gitconfig
+  - gitignore_global
+  - gitconfig
+  - hushlogin    
+  - vimrc    
+  - zsh_aliases  
+  - zshrc_variables
+  - gitignore_global  
+  - stCommitMsg  
+  - zlogout 
+  - zshrc

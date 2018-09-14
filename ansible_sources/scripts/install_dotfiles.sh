@@ -1,8 +1,6 @@
 #!/bin/bash
 script_dir=$(dirname $0)
-
 target=$1
-cp -i $script_dir/../dotfiles/.* $target
 
 # Install Amix vimrc configuration
 git clone --depth=1 https://github.com/amix/vimrc.git $target/.vim_runtime

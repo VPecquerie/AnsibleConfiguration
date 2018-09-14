@@ -1,8 +1,16 @@
 ---
 - include_vars: vars.yml
+
 - name: Install custom fonts
   script: scripts/install_fonts.sh
+
 - name: Create completions folder
   file: path={{ home }}/.zsh/completions state=directory
-- name: Install dotfiles
-  script: scripts/install_dotfiles.sh {{home}}
+
+- name: Copy dotfiles
+  copy:
+    src: "dotfiles/.{{ item }}"
+    dest: "{{ home }}/.{{ item }}"
+    owner: vpecquerie
+    group: vpecquerie
+  with_items: "{{ dotfiles }}"

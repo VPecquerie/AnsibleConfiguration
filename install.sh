@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-
 if ! [ -x "$(command -v apt-add-repository)" ]; then 
     sudo apt-get --assume-yes update 
     sudo apt-get install --assume-yes software-properties-common
