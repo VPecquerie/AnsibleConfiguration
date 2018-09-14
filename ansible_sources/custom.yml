@@ -2,3 +2,7 @@
 - include_vars: vars.yml
 - name: Install custom fonts
   script: scripts/install_fonts.sh
+- name: Create completions folder
+  file: path={{ home }}/.zsh/completions state=directory
+- name: Install dotfiles
+  script: scripts/install_dotfiles.sh {{home}}
