@@ -37,7 +37,7 @@ alias ping='ping -c 5'
 alias fastping='ping -c 100 -s.2'
 
 ## Editors
-alias vi=vim
+alias vi='vim'
 alias svi='sudo vi'
 alias svim='sudo vim'
 alias vis='vim "+set si"'
