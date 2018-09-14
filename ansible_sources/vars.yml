@@ -23,6 +23,8 @@ packages:
  - google-chrome-stable
  - spotify-client
  - snapd
+ - glances
+ - htop
 debs: {}
 pip: 
  - archey4
