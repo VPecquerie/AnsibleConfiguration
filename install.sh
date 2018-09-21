@@ -15,4 +15,5 @@ if ! [ -x "$(command -v ansible)" ]; then
     sudo apt-get --assume-yes install git
 fi
 
+git clone https://github.com/VPecquerie/AnsibleConfiguration.git /tmp/AnsibleConfiguration && cd /tmp/AnsibleConfiguration
 ansible-playbook ansible_sources/mint.yml -i hosts
