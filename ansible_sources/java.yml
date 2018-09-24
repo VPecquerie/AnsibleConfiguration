@@ -13,7 +13,7 @@
 
 - name: Install Oracle Java 8
   become: yes
-  apt: name={{item}} state=latest
+  apt: update_cache=yes name={{item}} state=latest
   with_items:
     - oracle-java8-installer
     - ca-certificates
