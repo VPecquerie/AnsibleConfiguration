@@ -2,15 +2,11 @@ username: vpecquerie
 home: /home/{{ username }}
 repositories:
  docker:
-  repository: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+  repository: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
   key_url: https://download.docker.com/linux/ubuntu/gpg
  chrome:
   repository: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
   key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
- spotify:
-  repository: deb http://repository.spotify.com stable non-free
-  keyserver: hkp://keyserver.ubuntu.com:80
-  key: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 packages:
  - vim
  - zsh
@@ -21,7 +17,6 @@ packages:
  - httpie
  - jq
  - google-chrome-stable
- - spotify-client
  - snapd
  - glances
  - htop
@@ -30,6 +25,7 @@ pip:
  - archey4
 targzs: {}
 snaps:
+ - spotify
  - slack
  - postman
  - vscode
