@@ -17,3 +17,8 @@
 
 - name: Remove tempory APT files
   command: rm /etc/apt/sources.list.d/dl_google_com_linux_chrome_deb.list
+
+- name: Download file from a file path
+  get_url:
+    url: https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
+    dest: /etc/udev/rules.d/70-u2f.rules
