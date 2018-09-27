@@ -14,3 +14,6 @@
     owner: vpecquerie
     group: vpecquerie
   with_items: "{{ dotfiles }}"
+
+- name: Remove tempory APT files
+  command: rm /etc/apt/sources.list.d/dl_google_com_linux_chrome_deb.list

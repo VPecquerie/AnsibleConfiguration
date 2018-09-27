@@ -8,4 +8,6 @@
    - include: targz-apps.yml
    - include: binaries.yml
    - include: pip.yml
+   - include: snap.yml
+   - include: updates.yml
    - include: custom.yml
