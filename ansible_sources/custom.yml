@@ -30,6 +30,8 @@
   become: yes
   become_user: "{{ username }}"
 
+- name: Fix Permissions
+  command: chown -R {{ username }}:{{ username }} {{ home }}
 - name: Download file from a file path
   get_url:
     url: https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
