@@ -32,6 +32,10 @@
 
 - name: Fix Permissions
   command: chown -R {{ username }}:{{ username }} {{ home }}
+
+- name: Install mint material theme
+  command: add-apt-repository ppa:tista/adapta && apt update && apt install -y adapta-gtk-theme
+
 - name: Download file from a file path
   get_url:
     url: https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
