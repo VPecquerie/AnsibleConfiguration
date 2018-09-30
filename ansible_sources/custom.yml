@@ -8,8 +8,8 @@
   copy:
     src: "dotfiles/.{{ item }}"
     dest: "{{ home }}/.{{ item }}"
-    owner: vpecquerie
-    group: vpecquerie
+    owner: "{{ username }}"
+    group: "{{ username }}"
   with_items: "{{ dotfiles }}"
 
 - name: Remove tempory APT files
