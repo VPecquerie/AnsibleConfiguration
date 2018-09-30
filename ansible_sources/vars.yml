@@ -20,6 +20,11 @@ packages:
  - snapd
  - glances
  - htop
+ - openssh-server
+ - gnupg2
+ - sshfs
+ - rsync 
+ - grsync
 debs: {}
 pip: 
  - archey4
@@ -29,6 +34,10 @@ snaps:
  - slack
  - postman
  - vscode
+ - gitkraken
+ - phpstorm
+ - webstorm
+ - mailspring
 binaries:
   docker_compose:
     name: docker-compose
