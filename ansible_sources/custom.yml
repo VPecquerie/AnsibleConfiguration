@@ -14,6 +14,7 @@
 
 - name: Remove tempory APT files
   command: rm /etc/apt/sources.list.d/dl_google_com_linux_chrome_deb.list
+  ignore_errors: True
 - name: Install Vscode extensions
   command: code --install-extension {{item}}
   with_items: "{{ vscode_extensions }}"
