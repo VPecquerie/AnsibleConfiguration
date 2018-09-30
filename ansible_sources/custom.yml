@@ -44,3 +44,7 @@
 - name: Fix Pientry issue
   command: ln -s /usr/bin/pinentry /usr/local/bin/pinentry
   ignore_errors: True
+
+- name: Fix GPG Permissions
+  command: chmod -R 0600 ~/.gnupg && chmod -R 0700 ~/.gnupg && chmod -R 0700 ~/.gnupg/openpgp-revocs.d && chmod -R 0700 ~/.gnupg/private-keys-v1.d
+  ignore_errors: True
