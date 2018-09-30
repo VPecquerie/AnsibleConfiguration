@@ -15,6 +15,8 @@ Plugin 'mattn/emmet-vim'
 " Themes support 
 Bundle 'gmist/vim-palette'
 
+Plugin 'rakr/vim-one'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -24,7 +26,8 @@ filetype plugin indent on    " required
 
 set shell=/bin/zsh
 set background=dark
-colorscheme base16-material-palenight
+colorscheme one
+
 syntax on
 
 filetype plugin indent on
@@ -34,3 +37,5 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
+let g:airline_theme='one'
