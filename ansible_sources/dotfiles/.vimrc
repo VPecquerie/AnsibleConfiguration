@@ -6,7 +6,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" The status bar
+Plugin 'vim-airline/vim-airline' 
+" A wrapper for git 
+Plugin 'tpope/vim-fugitive'
+" Emmet support
+Plugin 'mattn/emmet-vim'
+" Themes support 
+Bundle 'gmist/vim-palette'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -17,7 +24,7 @@ filetype plugin indent on    " required
 
 set shell=/bin/zsh
 set background=dark
-" colorscheme solarized
+colorscheme base16-material-palenight
 syntax on
 
 filetype plugin indent on
