@@ -59,3 +59,13 @@ dotfiles:
   - stCommitMsg  
   - zlogout 
   - zshrc
+vscode_extensions: 
+  - fallenwood.vimL
+  - eg2.tslint
+  - fatihacet.gitlab-workflow
+  - robertohuertasm.vscode-icons
+  - PeterJausovec.vscode-docker
+  - ms-vscode.csharp
+  - HookyQR.beautify
+  - ms-mssql.mssql
+  - zhuangtongfa.Material-theme
