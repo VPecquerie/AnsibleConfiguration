@@ -1,5 +1,9 @@
 #!/bin/bash
 set -e
+if [ `id -u 1000 2>/dev/null || echo -1` -ge 0 ]; then 
+    echo "The user with id 1000 exist, please change the configuration or remove it!"
+    exit
+fi
 
 apt-get install -y apt-transport-https ca-certificates sudo 
 
