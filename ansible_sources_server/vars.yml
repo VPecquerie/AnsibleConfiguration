@@ -10,7 +10,7 @@ repositories:
 packages:
  - vim
  - zsh
- - python3.6
+ - python3
  - python3-pip
  - docker-ce
  - glances
@@ -18,7 +18,7 @@ packages:
  - openssh-server
  - gnupg2
  - sshfs
- - rsync 
+ - rsync
 debs: {}
 pip: 
  - archey4
