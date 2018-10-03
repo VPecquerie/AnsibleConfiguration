@@ -1,0 +1,34 @@
+---
+- include_vars: vars.yml
+
+- name: Create completions folder
+  file: path={{ home }}/.zsh/completions state=directory
+
+- name: Copy dotfiles
+  copy:
+    src: "dotfiles/.{{ item }}"
+    dest: "{{ home }}/.{{ item }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+  with_items: "{{ dotfiles }}"
+
+- name: Remove tempory APT files
+  command: rm /etc/apt/sources.list.d/dl_google_com_linux_chrome_deb.list
+  ignore_errors: True
+
+- name: Add Vim configuration
+  git: >
+    repo=https://github.com/VundleVim/Vundle.vim.git
+    dest={{home}}/.vim/bundle/Vundle.vim
+
+- name: Install vim plugins
+  command: vim +PluginInstall +qall
+
+- name: Fix Permissions
+  command: chown -R {{ username }}:{{ username }} {{ home }}
+
+
+- name: Fix Pientry issue
+  command: ln -s /usr/bin/pinentry /usr/local/bin/pinentry
+  ignore_errors: True
+

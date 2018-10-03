@@ -1,0 +1,8 @@
+- name: Add the user 'Vincent PECQUERIE'
+  user:
+    name: vpecquerie
+    comment: Vincent PECQUERIE
+    uid: 1000
+    groups: sudo,docker
+    append: yes
+    shell: /bin/zsh

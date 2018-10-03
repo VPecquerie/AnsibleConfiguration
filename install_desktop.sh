@@ -16,4 +16,4 @@ if ! [ -x "$(command -v ansible)" ]; then
 fi
 
 git clone https://github.com/VPecquerie/AnsibleConfiguration.git /tmp/AnsibleConfiguration && cd /tmp/AnsibleConfiguration
-ansible-playbook ansible_sources/mint.yml -i hosts -vvv
+ansible-playbook ansible_sources_desktop/mint.yml -i hosts -vvv

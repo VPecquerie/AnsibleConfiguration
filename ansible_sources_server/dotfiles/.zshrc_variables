@@ -1,0 +1,12 @@
+export PUID=`id -u`
+export PGID=`id -g`
+export TZ="Europe/Paris"
+export USERDIR=$HOME
+export DOCKER_HOME="/docker"
+export TRAEFIK_ADMIN_USERNAME="vpecquerie"
+export TRAEFIK_ADMIN_PASSWORD="2xH8XjIBrY1r"
+export DOMAINNAME="vincent-p.ovh"
+export OVH_ENDPOINT="ovh-eu"
+export OVH_APPLICATION_KEY="eOnLspxJYNcGjAoS"
+export OVH_APPLICATION_SECRET="JMKVN7Nj75LsJy4J7JIUzfi3hIYJssx5"
+export OVH_CONSUMER_KEY="SC7BDywp5vPpth2rE3WlSW3FiX5cOqgG"

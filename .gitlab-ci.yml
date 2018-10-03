@@ -10,18 +10,17 @@ services:
 before_script:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" $DOCKER_REGISTRY
 
-build-master:
+build_server:
   stage: build
   script:
-    - docker build --pull -t "$DOCKER_REGISTRY/$DOCKER_REPOSITORY" .
-    - docker push "$DOCKER_REGISTRY/$DOCKER_REPOSITORY"
-  only:
-    - master
+    - docker build --pull -t "$DOCKER_REGISTRY/$DOCKER_REPOSITORY:server" -f Dockerfile_server .
+    - docker push "$DOCKER_REGISTRY/$DOCKER_REPOSITORY:server"
 
-build:
+
+build_desktop:
   stage: build
   script:
-    - docker build --pull -t "$DOCKER_REGISTRY/$DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG" .
-    - docker push "$DOCKER_REGISTRY/$DOCKER_REPOSITORY:$CI_COMMIT_REF_SLUG"
+    - docker build --pull -t "$DOCKER_REGISTRY/$DOCKER_REPOSITORY:desktop" -f Dockerfile_desktop .
+    - docker push "$DOCKER_REGISTRY/$DOCKER_REPOSITORY:desktop"
   except:
     - master
