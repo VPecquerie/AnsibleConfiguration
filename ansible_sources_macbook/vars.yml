@@ -1,0 +1,69 @@
+username: vpecquerie
+home: /Users/{{ username }}
+group: staff 
+binaries: {}
+
+taps:
+  - caskroom/fonts
+  - homebrew/core
+  - homebrew/bundle
+  - caskroom/cask
+
+casks:
+  - font-hack-nerd-font
+  - google-chrome
+  - iterm2
+  - osxfuse
+  - android-file-transfer
+  - appcleaner  
+  - totalfinder 
+  - vlc
+  - visual-studio-code
+  - shiftit
+  - slack
+  - spotify
+  - docker
+  - tunnelblick
+  - gitkraken
+  - postman
+  - teamviewer
+  
+brews:
+  - ntfs-3g
+  - node
+  - golang
+  - heroku/brew/heroku
+  - sshfs
+  - archey
+  - coreutils
+  - figlet
+  - gnupg
+  - python
+  - macvim
+  - pinentry-mac
+  - glances
+  - gnupg
+
+dotfiles:
+  - gitconfig
+  - gitignore_global
+  - gitconfig
+  - hushlogin    
+  - vimrc    
+  - zsh_aliases  
+  - zshrc_variables
+  - gitignore_global  
+  - stCommitMsg  
+  - zlogout
+  - zshrc
+  
+vscode_extensions: 
+  - fallenwood.vimL
+  - eg2.tslint
+  - fatihacet.gitlab-workflow
+  - robertohuertasm.vscode-icons
+  - PeterJausovec.vscode-docker
+  - ms-vscode.csharp
+  - HookyQR.beautify
+  - ms-mssql.mssql
+  - zhuangtongfa.Material-theme

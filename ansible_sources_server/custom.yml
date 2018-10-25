@@ -6,7 +6,7 @@
 
 - name: Copy dotfiles
   copy:
-    src: "dotfiles/.{{ item }}"
+    src: "../dotfiles/.{{ item }}"
     dest: "{{ home }}/.{{ item }}"
     owner: "{{ username }}"
     group: "{{ username }}"

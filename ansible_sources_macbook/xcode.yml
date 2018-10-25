@@ -1,0 +1,6 @@
+---
+- include_vars: vars.yml
+
+- name: Install Xcode command line
+  shell: xcode-select --install
+  ignore_errors: yes

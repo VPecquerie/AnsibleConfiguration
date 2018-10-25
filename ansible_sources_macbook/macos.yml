@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  tasks:
+  - include: xcode.yml
+  - include: brew.yml
+  - include: binaries.yml
+  - include: custom.yml
+
