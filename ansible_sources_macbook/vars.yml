@@ -27,6 +27,7 @@ casks:
   - gitkraken
   - postman
   - teamviewer
+  - mailspring
   
 brews:
   - ntfs-3g
