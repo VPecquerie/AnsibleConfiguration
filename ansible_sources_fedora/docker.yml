@@ -7,13 +7,24 @@
 - name: Enable Docker Repository
   command: sudo dnf config-manager --set-enabled docker-ce-edge
 
+- name: HACK SHOULD BE REMOVED SOON 
+  command: sed -i -e 's/$releasever/28/g' /etc/yum.repos.d/docker-ce.repo
+
+- name: Update DNF list
+  command: sudo dnf update -y
+  
+- name: UPGRADE DNF list 
+  command: sudo dnf upgrade -y
+ 
 - name: Install docker
-  dnf: docker-ce
+  dnf: 
+    name: "docker-ce"
+    state: latest
 
 - name: Start docker automatically
   command: sudo systemctl enable docker
 
 - name: Add User to docker group
-  command: usermod -a -G docker {{ username })
+  command: usermod -a -G docker "{{username}}"
 
 
