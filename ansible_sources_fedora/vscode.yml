@@ -1,0 +1,9 @@
+---
+- include_vars: vars.yml
+
+- name: Install Vscode extensions
+  command: /var/lib/snapd/snap/bin/code --install-extension "{{item}}"
+  with_items: "{{ vscode_extensions }}"
+  become: yes
+  become_user: "{{ username }}"
+  ignore_errors: true

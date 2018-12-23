@@ -44,3 +44,14 @@ binaries:
     name: docker-machine
     url: https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-Linux-x86_64
     zsh_completion: https://raw.githubusercontent.com/docker/machine/v0.15.0/contrib/completion/zsh/_docker-machine
+
+vscode_extensions: 
+  - fallenwood.vimL
+  - eg2.tslint
+  - fatihacet.gitlab-workflow
+  - robertohuertasm.vscode-icons
+  - PeterJausovec.vscode-docker
+  - ms-vscode.csharp
+  - HookyQR.beautify
+  - ms-mssql.mssql
+  - m-thorsen.vscode-material-mt
