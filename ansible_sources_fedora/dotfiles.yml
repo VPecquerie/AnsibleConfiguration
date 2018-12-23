@@ -1,0 +1,24 @@
+---
+- include_vars: vars.yml
+
+- name: Create completions folder
+  file: path={{ home }}/.zsh/completions state=directory
+
+- name: Copy dotfiles
+  copy:
+    src: "../dotfiles/.{{ item }}"
+    dest: "{{ home }}/.{{ item }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+  with_items: "{{ dotfiles }}"
+
+- name: Add Vim configuration
+  git: >
+    repo=https://github.com/VundleVim/Vundle.vim.git
+    dest={{home}}/.vim/bundle/Vundle.vim
+
+- name: Install vim plugins
+  command: vim +PluginInstall +qall
+
+- name: Fix Permissions
+  command: chown -R {{ username }}:{{ username }} {{ home }}

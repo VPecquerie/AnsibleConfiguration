@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+   - include: packages.yml
+   - include: snap.yml
+   - include: docker.yml
+   - include: dotfiles.yml
+   - include: binaries.yml
+   - include: pip.yml
+   - include: gems.yml

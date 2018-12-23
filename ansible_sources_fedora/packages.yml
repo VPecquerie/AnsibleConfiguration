@@ -1,0 +1,14 @@
+---
+- include_vars: vars.yml
+
+- name: Install DNF Packages...
+  dnf: 
+    name: "{{ item }}"
+    state: latest
+    with_items: "{{ dnf }}"
+
+- name: Install DNF Groups...
+  dnf: 
+    name: "@{{ item }}"
+    state: latest
+    with_items: "{{ dnf_groups }}"

@@ -1,0 +1,46 @@
+username: vpecquerie
+home: /home/{{ username }}
+dnf:
+  - ansible
+  - git
+  - vim
+  - zsh
+  - iftop
+  - iotop
+  - htop
+  - glances
+  - dnf-plugins-core
+dnf_groups:
+  - mate-desktop
+  - mate-applications
+  - development-tools
+pip: 
+ - archey4
+snaps:
+ - spotify
+ - slack
+ - postman
+ - vscode
+ - gitkraken
+ - mailspring
+ - vlc
+ - android-studio
+ - rubymine
+ - webstorm
+ - intellij-idea-ultimate
+ - phpstorm
+ - node
+ - caprine
+gems: 
+ - lolcat
+ - colorls
+ - catpix
+binaries:
+  docker_compose:
+    name: docker-compose
+    url: https://github.com/docker/compose/releases/download/1.22.0/docker-compose-Linux-x86_64
+    zsh_completion: https://raw.githubusercontent.com/docker/compose/1.22.0/contrib/completion/zsh/_docker-compose
+  docker_machine:
+    name: docker-machine
+    url: https://github.com/docker/machine/releases/download/v0.15.0/docker-machine-Linux-x86_64
+    zsh_completion: https://raw.githubusercontent.com/docker/machine/v0.15.0/contrib/completion/zsh/_docker-machine

@@ -1,0 +1,20 @@
+- name: Install snaps apps
+  command: snap install {{ item }} --classic
+  with_items: "{{ snaps }}"
+
+- name: Find desktop entries
+  find:  paths="/var/lib/snapd/desktop/applications" recurse=yes patterns="*.desktop"
+  register: find_files
+
+- name: set fact
+  set_fact:
+    all_files:
+      - "{{ find_files.files | map(attribute='path') | list }}"
+  when: find_files > 0
+
+- name: Copy desktop entries
+  copy:
+    src: "{{ item }}"
+    dest: /usr/share/applications/
+  with_items: "{{ all_files }}"
+  when: find_files > 0

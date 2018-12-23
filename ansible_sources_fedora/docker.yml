@@ -1,0 +1,19 @@
+---
+- include_vars: vars.yml
+
+- name: Add Docker Repository
+  command: sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+- name: Enable Docker Repository
+  command: sudo dnf config-manager --set-enabled docker-ce-edge
+
+- name: Install docker
+  dnf: docker-ce
+
+- name: Start docker automatically
+  command: sudo systemctl enable docker
+
+- name: Add User to docker group
+  command: usermod -a -G docker {{ username })
+
+
