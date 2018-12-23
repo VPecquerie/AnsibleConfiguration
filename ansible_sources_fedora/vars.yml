@@ -10,10 +10,17 @@ dnf:
   - htop
   - glances
   - dnf-plugins-core
+  - snapd
+  - ruby-devel
+  - ImageMagick-devel
+  - rpm-build
+  - util-linux-user
+  - fedora-workstation-repositories
 dnf_groups:
   - mate-desktop
   - mate-applications
   - development-tools
+  - cinnamon-desktop
 pip: 
  - archey4
 snaps:
@@ -29,12 +36,10 @@ snaps:
  - webstorm
  - intellij-idea-ultimate
  - phpstorm
- - node
  - caprine
 gems: 
  - lolcat
  - colorls
- - catpix
 binaries:
   docker_compose:
     name: docker-compose

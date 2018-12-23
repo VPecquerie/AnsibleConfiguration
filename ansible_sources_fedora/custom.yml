@@ -1,0 +1,28 @@
+- name: Fix Pientry issue
+  command: ln -s /usr/bin/pinentry /usr/local/bin/pinentry
+  ignore_errors: True
+
+- name: Fix GPG Permissions
+  command: chmod -R 0600 {{ home }}/.gnupg 
+  ignore_errors: True
+
+- name: Fix GPG Permissions
+  command: chmod 0700 {{ home }}/.gnupg 
+  ignore_errors: True
+
+- name: Fix GPG Permissions
+  command: chmod 0700 {{ home }}/.gnupg/openpgp-revocs.d 
+  ignore_errors: True
+
+- name: Fix GPG Permissions
+  command: chmod 0700 {{ home }}/.gnupg/private-keys-v1.d
+  ignore_errors: True
+
+- name: Set zsh as default shell interpretor
+  command: chsh -s /bin/zsh {{ username }}
+
+- name: "Enable Google Chrome repository"
+  command: dnf config-manager --set-enabled google-chrome
+
+- name: "Install google chrome"
+  command: dnf install -y google-chrome-stable

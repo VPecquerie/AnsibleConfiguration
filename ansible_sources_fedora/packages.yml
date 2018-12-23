@@ -5,10 +5,14 @@
   dnf: 
     name: "{{ item }}"
     state: latest
-    with_items: "{{ dnf }}"
+  with_items: "{{ dnf }}"
 
 - name: Install DNF Groups...
   dnf: 
     name: "@{{ item }}"
     state: latest
-    with_items: "{{ dnf_groups }}"
+  with_items: "{{ dnf_groups }}"
+
+- name: Link snap root (to enable classic snap support)
+  command: ln -s /var/lib/snapd/snap /snap
+  ignore_errors: true
