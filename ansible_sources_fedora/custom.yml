@@ -49,7 +49,10 @@
 - name: "Install Material Theme"
   command: dnf install -y materia-theme
 
-- name: "Install nodejs"
+- name: "Install nodejs repo"
   shell: curl -sL https://rpm.nodesource.com/setup_11.x | bash -
   args:
     warn: no
+
+- name: "Install nodejs"
+  command: "dnf install -y nodejs"
