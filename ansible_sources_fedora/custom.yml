@@ -1,0 +1,55 @@
+- name: Fix Pientry issue
+  command: ln -s /usr/bin/pinentry /usr/local/bin/pinentry
+  ignore_errors: True
+
+- name: Fix GPG Permissions
+  command: chmod -R 0600 {{ home }}/.gnupg 
+  ignore_errors: True
+  args:
+    warn: no
+
+- name: Fix GPG Permissions
+  command: chmod 0700 {{ home }}/.gnupg 
+  ignore_errors: True
+  args:
+    warn: no
+
+- name: Fix GPG Permissions
+  command: chmod 0700 {{ home }}/.gnupg/openpgp-revocs.d 
+  ignore_errors: True
+  args:
+    warn: no
+
+- name: Fix GPG Permissions
+  command: chmod 0700 {{ home }}/.gnupg/private-keys-v1.d
+  ignore_errors: True
+  args:
+    warn: no
+
+- name: Set zsh as default shell interpretor
+  command: chsh -s /bin/zsh {{ username }}
+
+- name: "Enable Google Chrome repository"
+  command: dnf config-manager --set-enabled google-chrome
+  args:
+    warn: no
+
+- name: "Install google chrome"
+  command: dnf install -y google-chrome-stable
+  args:
+    warn: no
+
+- name: "Install Vim plugins"
+  command: vim +PluginInstall +qall
+  become: "{{ username }}"
+
+- name: "Install Material repository"
+  command: sudo dnf config-manager --add-repo https://copr.fedorainfracloud.org/coprs/tcg/themes/repo/fedora-29/tcg-themes-fedora-29.repo
+
+- name: "Install Material Theme"
+  command: dnf install -y materia-theme
+
+- name: "Install nodejs"
+  shell: curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+  args:
+    warn: no

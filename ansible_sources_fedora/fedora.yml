@@ -8,3 +8,6 @@
    - include: binaries.yml
    - include: pip.yml
    - include: gems.yml
+   - include: vscode.yml
+   - include: custom.yml
+   - include: fonts.yml

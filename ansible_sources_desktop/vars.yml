@@ -8,6 +8,7 @@ repositories:
   repository: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
   key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
 packages:
+ - build-essential
  - vim
  - zsh
  - python3.6
@@ -25,6 +26,8 @@ packages:
  - sshfs
  - rsync 
  - grsync
+ - gnome-themes-extra
+ - materia-gtk-theme
 debs: {}
 pip: 
  - archey4
@@ -35,9 +38,19 @@ snaps:
  - postman
  - vscode
  - gitkraken
- - phpstorm
- - webstorm
  - mailspring
+ - vlc
+ - android-studio
+ - rubymine
+ - webstorm
+ - intellij-idea-ultimate
+ - phpstorm
+ - node
+ - caprine
+gems: 
+ - lolcat
+ - colorls
+ - catpix
 binaries:
   docker_compose:
     name: docker-compose
@@ -68,4 +81,4 @@ vscode_extensions:
   - ms-vscode.csharp
   - HookyQR.beautify
   - ms-mssql.mssql
-  - zhuangtongfa.Material-theme
+  - m-thorsen.vscode-material-mt
