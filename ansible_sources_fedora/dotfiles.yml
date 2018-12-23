@@ -20,5 +20,13 @@
 - name: Install vim plugins
   command: vim +PluginInstall +qall
 
+- name: Create completions folder
+  file: path={{ home }}/.zsh/completions state=directory
+
+- name: Install completions
+  get_url: url={{ item.value.zsh_completion }} dest={{ home }}/.zsh/completions/{{ item.value.name }} validate_certs=no mode=0755 force=yes
+  with_dict: "{{ binaries }}"
+
 - name: Fix Permissions
   command: chown -R {{ username }}:{{ username }} {{ home }}
+
