@@ -56,3 +56,9 @@
 
 - name: "Install nodejs"
   command: "dnf install -y nodejs"
+
+- name: "Download Temaviewer"
+  command: wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
+
+- name: "Install Temaviewer"
+  command: dnf -y install teamviewer.x86_64.rpm
