@@ -1,7 +1,6 @@
 ---
 - hosts: localhost
   tasks:
-   - include: java.yml
    - include: apt.yml
    - include: debs.yml
    - include: user.yml

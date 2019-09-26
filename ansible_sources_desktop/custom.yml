@@ -1,50 +1,22 @@
 ---
 - include_vars: vars.yml
 
-- name: Create completions folder
-  file: path={{ home }}/.zsh/completions state=directory
-
-- name: Copy dotfiles
-  copy:
-    src: "../dotfiles/.{{ item }}"
-    dest: "{{ home }}/.{{ item }}"
-    owner: "{{ username }}"
-    group: "{{ username }}"
-  with_items: "{{ dotfiles }}"
-
 - name: Remove tempory APT files
   command: rm /etc/apt/sources.list.d/dl_google_com_linux_chrome_deb.list
   ignore_errors: True
 
-- name: Add Vim configuration
-  git: >
-    repo=https://github.com/VundleVim/Vundle.vim.git
-    dest={{home}}/.vim/bundle/Vundle.vim
+- name: Clone dotfiles
+  git: 
+    repo: 'https://github.com/VPecquerie/dotfiles.git'
+    dest: '{{home}}/.dotfiles'
 
-- name: Install vim plugins
-  command: vim +PluginInstall +qall
+- name: Install dotfiles
+  command: 'cd {{home}}/.dotfiles && install.sh'
 
-- name: Install Vscode extensions
-  command: code --install-extension {{item}}
-  with_items: "{{ vscode_extensions }}"
-  become: yes
-  become_user: "{{ username }}"
-
-- name: Fix Permissions
-  command: chown -R {{ username }}:{{ username }} {{ home }}
-
-- name: Install mint material theme
-  command: add-apt-repository ppa:tista/adapta && apt update && apt install -y adapta-gtk-theme
-
-- name: Download file from a file path
-  get_url:
-    url: https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
-    dest: /etc/udev/rules.d/70-u2f.rules
-
-- name: Fix Pientry issue
-  command: ln -s /usr/bin/pinentry /usr/local/bin/pinentry
-  ignore_errors: True
-
-- name: Fix GPG Permissions
-  command: chmod -R 0600 ~/.gnupg && chmod -R 0700 ~/.gnupg && chmod -R 0700 ~/.gnupg/openpgp-revocs.d && chmod -R 0700 ~/.gnupg/private-keys-v1.d
-  ignore_errors: True
+- name: Fix permissions
+  file: 
+    path: {{home}}
+    state: directory
+    owner: {{username}}
+    group: {{username}}
+    recurse: yes
