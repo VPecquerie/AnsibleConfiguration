@@ -11,12 +11,13 @@
     dest: '{{home}}/.dotfiles'
 
 - name: Install dotfiles
-  command: 'cd {{home}}/.dotfiles && install.sh'
-
+  command: 'bash install.sh'
+  args:
+    chdir: '{{home}}/.dotfiles'
 - name: Fix permissions
   file: 
-    path: {{home}}
+    path: '{{home}}'
     state: directory
-    owner: {{username}}
-    group: {{username}}
+    owner: '{{username}}'
+    group: '{{username}}'
     recurse: yes
