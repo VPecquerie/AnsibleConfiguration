@@ -30,6 +30,8 @@ packages:
  - grsync
  - gnome-themes-extra
  - materia-gtk-theme
+ - remmina 
+ - remmina-plugin-rdp
 debs: 
   teamviewer:
     url: https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
